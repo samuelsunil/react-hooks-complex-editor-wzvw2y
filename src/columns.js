@@ -4,31 +4,23 @@ export const columnDefs = [
   {
     headerName: "Athlete (simpleEditor)",
     field: "athlete",
-    cellEditor: "simpleEditor"
-  },
-  {
-    headerName: "View Details",
-    field: "viewDetails",
-    isDrillDown: true,
-    cellRenderer: "drillDownCellRenderer",
-    width: 95,
-    pinned: "left",
+    cellEditor: "simpleEditor",
   },
   {
     headerName: "Sport (Validation)",
     field: "sport",
     cellEditor: "asyncValidationEditor",
     cellEditorParams: {
-      condition: value => OLYMPIC_SPORTS.includes(value)
-    }
+      condition: (value) => OLYMPIC_SPORTS.includes(value),
+    },
   },
   {
     headerName: "Country (autoComplete)",
     field: "country",
     cellEditor: "autoCompleteEditor",
     cellEditorParams: {
-      options: OLYMPIC_COUNTRIES
-    }
+      options: OLYMPIC_COUNTRIES,
+    },
   },
   {
     headerName: "Date (Datepicker)",
@@ -38,7 +30,7 @@ export const columnDefs = [
     filterParams: {
       clearButton: true,
       suppressAndOrCondition: true,
-      comparator: function(filterLocalDateAtMidnight, cellValue) {
+      comparator: function (filterLocalDateAtMidnight, cellValue) {
         var dateAsString = cellValue;
         var dateParts = dateAsString.split("/");
         var cellDate = new Date(
@@ -55,8 +47,8 @@ export const columnDefs = [
         if (cellDate > filterLocalDateAtMidnight) {
           return 1;
         }
-      }
-    }
+      },
+    },
   },
   {
     headerName: "",
@@ -64,8 +56,8 @@ export const columnDefs = [
     cellRenderer: "actionsRenderer",
     editable: false,
     filter: false,
-    minWidth: 220
-  }
+    minWidth: 220,
+  },
 ];
 
 export const defaultColDef = {
@@ -73,5 +65,5 @@ export const defaultColDef = {
   resizable: true,
   filter: true,
   floatingFilter: true,
-  suppressKeyboardEvent: params => params.editing
+  suppressKeyboardEvent: (params) => params.editing,
 };

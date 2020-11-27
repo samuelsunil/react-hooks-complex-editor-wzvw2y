@@ -11,12 +11,12 @@ import { Button } from "@material-ui/core";
 //   }
 // }
 
-export default forwardRef((props, ref) => {
+export default (props, ref) => {
   return (
     <Button color="primary" size="small">
       View
     </Button>
   );
-});
+};
 
 // export default DrillDownCellRenderer;
