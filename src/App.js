@@ -3,7 +3,7 @@ import { AgGridReact } from "ag-grid-react";
 import { createMuiTheme } from "@material-ui/core/styles";
 import "ag-grid-enterprise";
 import "ag-grid-community/dist/styles/ag-grid.css";
-import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+import "ag-grid-community/dist/styles/ag-theme-material/sass/legacy/_ag-theme-material-v22-compat.scss";
 import { ThemeProvider } from "@material-ui/core";
 import { columnDefs, defaultColDef } from "./columns";
 import GridComponents from "./Components";
@@ -91,13 +91,13 @@ function App() {
     <ThemeProvider theme={createMuiTheme(applyTheme)}>
       <div className="my-app">
         <Button color="primary" onClick={handleClick} size="small">
-          View
+          Click me to load data
         </Button>
 
         <div
           id="myGrid"
           style={{ height: "100%", width: "100%" }}
-          className="ag-theme-alpine"
+          className="ag-theme-material"
         >
           <AgGridReact
             columnDefs={rootColumnDef}
